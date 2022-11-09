@@ -1,6 +1,6 @@
 # Camunda 8 Node.js Connector Runtime
 
-Job Worker that implement runtime for Connectors in Node.js
+Job Worker that implement a Connectors runtime for Node.js
 
 #### ⚠️ Known issues ⚠️
 
