@@ -2,7 +2,7 @@
 
 Job Worker that implement runtime for Connectors in Node.js
 
-#### Known issues
+#### ⚠️ Known issues ⚠️
 
 - Output mappings is not working
 
