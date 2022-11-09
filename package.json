@@ -10,7 +10,7 @@
     "build": "npm run lint && npx tsc"
   },
   "engines": {
-    "node": ">=16.18.0"
+    "node": ">=18.12.1"
   },
   "devDependencies": {
     "@tsconfig/node16": "^1.0.3",
