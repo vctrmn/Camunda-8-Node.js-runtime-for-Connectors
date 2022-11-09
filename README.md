@@ -21,6 +21,11 @@ templates
 
 ## Getting started locally
 
+### Prerequisites
+
+- [Node.js](https://nodejs.org/en/) 18 LTS installed
+- [Docker desktop](https://www.docker.com/products/docker-desktop/) installed
+
 1. Start docker-compose
 
 ```
