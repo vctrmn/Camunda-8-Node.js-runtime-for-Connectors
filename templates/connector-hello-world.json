@@ -1,0 +1,84 @@
+{
+    "$schema": "https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json",
+    "name": "Hello World Connector",
+    "id": "io.camunda.connector.example.v1",
+    "description": "This is a Hello World connector",
+    "version": 1,
+    "icon": {
+        "contents": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDgiIHdpZHRoPSI0OCI+PHBhdGggZD0iTTM0IDQ2cTUgMCA4LjUtMy41VDQ2IDM0aC0zcTAgMy43NS0yLjYyNSA2LjM3NVQzNCA0M1pNMiAxNGgzcTAtMy43NSAyLjYyNS02LjM3NVQxNCA1VjJROSAyIDUuNSA1LjVUMiAxNFptNS4wNSAyNi45NVEyLjIgMzYuMSAyLjIgMjkuM3EwLTYuOCA0Ljg1LTExLjY1bDcuNC03LjQ1cTEuMy0xLjMgMy4xNzUtMS4zIDEuODc1IDAgMy4xNzUgMS4zLjIuMTUuNDUuNWwuNS43IDUuOC01LjhxMS4zLTEuMyAzLjE3NS0xLjMgMS44NzUgMCAzLjE3NSAxLjMuMy4zNS41MjUuNy4yMjUuMzUuMzI1LjZRMzYgNS42NSAzNy44MjUgNS43cTEuODI1LjA1IDMuMTI1IDEuMzUgMSAxIDEuMiAyLjQ3NS4yIDEuNDc1LS40NSAyLjkyNS40LjE1Ljc1LjR0LjY1LjU1cTEuMyAxLjMgMS4zIDMuMTc1IDAgMS44NzUtMS4zIDMuMTc1TDQxLjg1IDIxcS4zNS4xNS42NzUuNC4zMjUuMjUuNTc1LjUgMS4zIDEuMyAxLjMyNSAzLjE3NS4wMjUgMS44NzUtMS4zMjUgMy4xNzVsLTEyLjc1IDEyLjdRMjUuNSA0NS44IDE4LjcgNDUuOHEtNi44IDAtMTEuNjUtNC44NVptMi4xLTIuMXEyIDIgNC40NzUgMi45NzUgMi40NzUuOTc1IDUuMDc1Ljk3NXQ1LjA3NS0uOTc1cTIuNDc1LS45NzUgNC40NzUtMi45NzVsMTIuNy0xMi43NXEuNDUtLjQ1LjQ1LTEuMDc1VDQwLjk1IDI0cS0uNDUtLjQ1LTEuMDUtLjQ1LS42IDAtMS4wNS40NWwtNy4wNSA3LjA1LTIuMTUtMi4xIDExLjMtMTEuM3EuNDUtLjQ1LjQ1LTEuMDc1dC0uNDUtMS4wNzVxLS40NS0uNDUtMS4wNS0uNDUtLjYgMC0xLjA1LjQ1bC05LjkgOS45LTIuMS0yLjEgMTItMTIuMDVxLjQ1LS40NS40MjUtMS4wNzUtLjAyNS0uNjI1LS40MjUtMS4wMjUtLjQ1LS40NS0xLjA1LS40NS0uNiAwLTEuMDUuNDVsLTEyLjA1IDEyLTIuMS0yLjEgOS4yLTkuMnEuNDUtLjQ1LjQyNS0xLjA3NVEzMi4yIDguMTUgMzEuOCA3Ljc1cS0uNDUtLjQ1LTEuMDc1LS40NXQtMS4wNzUuNDVsLTEzLjIgMTMuMnExLjA1IDIuNi42NSA1LjMtLjQgMi43LTIuMyA0LjhsLTIuMS0yLjFxMS42LTEuODUgMS42LTQuMjV0LTEuNi00LjI1bDYtNnEuNDUtLjQ1LjQyNS0xLjA3NS0uMDI1LS42MjUtLjQyNS0xLjAyNS0uNDUtLjQ1LTEuMDUtLjQ1LS42IDAtMS4wNS40NWwtNy40NSA3LjRxLTIgMi0yLjk3NSA0LjQ3NVE1LjIgMjYuNyA1LjIgMjkuM3QuOTc1IDUuMDc1UTcuMTUgMzYuODUgOS4xNSAzOC44NVoiLz48L3N2Zz4="
+    },
+    "category": {
+        "id": "connectors",
+        "name": "Connectors"
+    },
+    "appliesTo": [
+        "bpmn:Task"
+    ],
+    "elementType": {
+        "value": "bpmn:ServiceTask"
+    },
+    "groups": [
+        {
+            "id": "your-information",
+            "label": "Your Information"
+        },
+        {
+            "id": "output",
+            "label": "Output"
+        }
+    ],
+    "properties": [
+        {
+            "type": "Hidden",
+            "value": "io.camunda:connector-hello-world:1",
+            "binding": {
+                "type": "zeebe:taskDefinition:type"
+            }
+        },
+        {
+            "label": "First Name",
+            "group": "your-information",
+            "type": "String",
+            "binding": {
+                "type": "zeebe:input",
+                "name": "firstName"
+            },
+            "constraints": {
+                "notEmpty": true
+            }
+        },
+        {
+            "label": "Last Name",
+            "group": "your-information",
+            "type": "String",
+            "binding": {
+                "type": "zeebe:input",
+                "name": "lastName"
+            },
+            "constraints": {
+                "notEmpty": true
+            }
+        },
+        {
+            "label": "Result Variable",
+            "description": "Name of variable to store the response in",
+            "group": "output",
+            "type": "String",
+            "binding": {
+                "type": "zeebe:taskHeader",
+                "key": "resultVariable"
+            }
+        },
+        {
+            "label": "Result Expression",
+            "description": "Expression to map the response into process variables",
+            "group": "output",
+            "type": "Text",
+            "feel": "required",
+            "binding": {
+                "type": "zeebe:taskHeader",
+                "key": "resultExpression"
+            }
+        }
+    ]
+}

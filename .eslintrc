@@ -1,0 +1,53 @@
+{
+    "env": {
+        /* Enable jest testing */
+        "jest": true
+    },
+    /* use Typescript parser */
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+        /* use Recommended Typescript preset for linting */
+        "plugin:@typescript-eslint/recommended",
+        /* use Airbnb-base preset for linting */
+        "airbnb-base"
+    ],
+    /* Parser options should match the TS config. */
+    "parserOptions": {
+        "ecmaVersion": 2021, /* es2021 */
+        "sourceType": "module" /* "module": "commonjs" */
+    },
+    "rules": {
+        "@typescript-eslint/explicit-function-return-type": "error",
+        /* No import default */
+        "import/prefer-default-export": "off",
+        "lines-between-class-members": "off",
+        /* Enable import without extension .ts */
+        "import/extensions": [
+            "error",
+            {
+                "ts": "never"
+            }
+        ],
+        /* Error if spaces size is not 4 */
+        "indent": [
+            "error",
+            4
+        ],
+        "max-len": [
+            "error",
+            {
+                "code": 125
+            }
+        ]
+    },
+    "settings": {
+        /* Enable the path to module resolution */
+        "import/resolver": {
+            "node": {
+                "extensions": [
+                    ".ts"
+                ]
+            }
+        }
+    }
+}
