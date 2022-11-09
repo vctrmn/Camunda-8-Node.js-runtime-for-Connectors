@@ -21,7 +21,7 @@ templates
 
 ## Getting started locally
 
-### Prerequisites
+#### Prerequisites
 
 - [Node.js](https://nodejs.org/en/) 18 LTS installed
 - [Docker desktop](https://www.docker.com/products/docker-desktop/) installed
@@ -53,6 +53,12 @@ npm run test
 ```
 npm run dev
 ```
+
+## Develop in VS Code
+
+*Recommended*
+
+Install extension [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) to integrate linting into VS Code
 
 ## Providing and using template 
 
