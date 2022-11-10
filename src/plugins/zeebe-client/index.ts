@@ -4,9 +4,6 @@ import {
 import { BPMNError, OutboundConnectorFunction, OutboundConnectorContext } from 'camunda-connector-sdk';
 import logger from '../logger';
 
-const { ZEEBE_ADDRESS = 'localhost:26500' } = process.env;
-const CAMUNDA_CLOUD: boolean = (process.env.CAMUNDA_CLOUD === 'true');
-
 class ZeebeClient extends ZBClient {
     constructor() {
         const options: ZBClientOptions = {
@@ -15,18 +12,8 @@ class ZeebeClient extends ZBClient {
             maxRetries: 0,
         };
 
-        if (CAMUNDA_CLOUD) {
-            options.camundaCloud = {
-                clusterId: process.env.ZEEBE_CLUSTER_ID as string,
-                clientId: process.env.ZEEBE_CLIENT_ID as string,
-                clientSecret: process.env.ZEEBE_CLIENT_SECRET as string,
-                clusterRegion: process.env.ZEEBE_CLUSTER_REGION as string,
-            };
-        }
-
         super(options);
 
-        this.gatewayAddress = ZEEBE_ADDRESS;
         this.loglevel = 'INFO';
 
         /**
