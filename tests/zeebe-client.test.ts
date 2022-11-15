@@ -3,7 +3,7 @@ import ConnectorHelloWorld from '../src/connectors/connector-hello-world';
 import ZeebeClient from '../src/plugins/zeebe-client';
 
 describe('ZeebeClient test suite', () => {
-    it('Add connector', () => {
+    it('Create connector', () => {
         process.env.ZEEBE_ADDRESS = 'localhoster:26500';
         // given
         const zeebeClient = new ZeebeClient();
