@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-import { ZeebeClient } from './plugins/zeebe-client';
+import ZeebeClient from './plugins/zeebe-client';
 import ConnectorHelloWorld from './connectors/connector-hello-world';
 
 /**

@@ -52,4 +52,4 @@ class ZeebeClient extends ZBClient {
     }
 }
 
-export { ZeebeClient };
+export default ZeebeClient;
